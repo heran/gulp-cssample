@@ -156,7 +156,7 @@ module.exports = function(fileName, template, typeSorts) {
 
   function transformFunc(file, enc, cb) {
     if(!file.isStream()){
-      content += decoder.write(file.contents);
+      if(file.contents)content += decoder.write(file.contents);
     }
     cb();
   };
